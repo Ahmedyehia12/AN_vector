@@ -15,7 +15,7 @@ public:
     AN_Vector (T*, int  n );
     AN_Vector (const AN_Vector&);
     ~AN_Vector();
-//    AN_Vector &operator=(const Vector&);
+    AN_Vector &operator=(const AN_Vector<T>&);
 //    AN_Vector &operator=(const Vector&&);
     // Access operations
     T& operator[](int);
