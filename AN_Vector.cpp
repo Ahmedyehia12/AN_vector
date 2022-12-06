@@ -77,8 +77,7 @@ T AN_Vector<T>::pop_back() {
     }
     return data[--size];
 }
-//void erase(AN_Vector<T>: );
-//void erase(iterator1, iterator2);
+
 template<class T>
 void AN_Vector<T>::clear() {
     size = 0;
@@ -109,7 +108,16 @@ bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
 }
 template<class T>
 bool AN_Vector<T> :: operator< (const AN_Vector<T>& other){
-
+if(size != other.size){
+    return false;
+}
+else{
+    for(int i=0;i<size;i++){
+        if(data[i]<other.data[i])
+            return false;
+    }
+    return true;
+}
 }
 
 // Capacity operations

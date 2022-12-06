@@ -33,7 +33,6 @@ public:
     // Modifying operations
     int push_back(T element);
 
-
     T pop_back();
 
    void erase(iterator i );
