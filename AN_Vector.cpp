@@ -51,7 +51,10 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
 template<class T>
 T& AN_Vector<T> :: operator[](int index){
     if(index < 0 || index >= size){
+
         throw out_of_range("Index element is out of range");
+        exit(-1);
+        //exit(-1);
     }
     return data[index];
 }
@@ -85,7 +88,7 @@ void AN_Vector<T>::clear() {
 
 // Iterators
 template<class T>
-T* AN_Vector<T> :: begin(){
+T* AN_Vector<T>::begin(){
     return data;
 }
 template<class T>
