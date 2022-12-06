@@ -3,8 +3,8 @@
 // Constructors and Big 4
 template<class T>
 AN_Vector<T> :: AN_Vector (int cap)
-    :size{0}, capacity{cap}, data{new T[capacity]} {}
-
+    :size{0}, capacity{cap}, data{new T[capacity]}{
+}
 template<class T>
 AN_Vector<T> :: AN_Vector (T *ptr, int n)
     :size{n}, capacity{n}, data{new T[capacity]}{
@@ -51,8 +51,7 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
 template<class T>
 T& AN_Vector<T> :: operator[](int index){
     if(index < 0 || index >= size){
-        cout << "Error: Array index is out of range!" << endl;
-        exit(-1);
+        throw out_of_range("Index element is out of range");
     }
     return data[index];
 }
@@ -85,10 +84,14 @@ void AN_Vector<T>::clear() {
 //void insert(iterator, T);
 
 // Iterators
-//template<class T>
-//iterator begin();
-//template<class T>
-//iterator end();
+template<class T>
+T* AN_Vector<T> :: begin(){
+    return data;
+}
+template<class T>
+T* AN_Vector<T> :: end(){
+    return data + size;
+}
 
 // Comparison operations
 template<class T>
@@ -107,17 +110,16 @@ bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
         return false;
 }
 template<class T>
-bool AN_Vector<T> :: operator< (const AN_Vector<T>& other){
-if(size != other.size){
-    return false;
-}
-else{
-    for(int i=0;i<size;i++){
-        if(data[i]<other.data[i])
-            return false;
+bool AN_Vector<T> :: operator< (const AN_Vector<T>& other) {
+    if (size != other.size) {
+        return false;
+    } else {
+        for (int i = 0; i < size; i++) {
+            if (data[i] < other.data[i])
+                return false;
+        }
+        return true;
     }
-    return true;
-}
 }
 
 // Capacity operations
@@ -145,7 +147,6 @@ template<class T>
 bool AN_Vector<T>::empty() {
     return size == 0;
 }
-
 template<class T>
 void AN_Vector<T>::erase(iterator i1, iterator i2) {
     if(i1 == i2){
@@ -161,16 +162,6 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
     }
     size -= cnt;
 }
-
-template<class T>
-T* AN_Vector<T>::begin() {
-    return data;
-}
-template<class T>
-T* AN_Vector<T>::end() {
-    return data+size;
-}
-
 template<class T>
 void AN_Vector<T>::erase(AN_Vector::iterator i) {
     if(i > end() || i<begin()){
@@ -183,7 +174,6 @@ void AN_Vector<T>::erase(AN_Vector::iterator i) {
     size--;
 
 }
-
 template<class T>
 void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
     if(i>end() || i<begin()){
@@ -210,16 +200,11 @@ void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
     }
 }
 
-
-
-
-
-
-
-
-
 // ostream operator overloading
-//template<class T>
-//ostream& operator << (ostream& out, const AN_Vector<T> &v) {
-//
-//}
+template<class T>
+ostream& operator << (ostream& out, const AN_Vector<T> &v) {
+    for(int i=0;i<v.size;i++){
+        out << v.data[i] << " ";
+    }
+    return out;
+}
