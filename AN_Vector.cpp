@@ -51,8 +51,7 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
 template<class T>
 T& AN_Vector<T> :: operator[](int index){
     if(index < 0 || index >= size){
-        cout << "Error: Array index is out of range!" << endl;
-        exit(-1);
+        throw std::out_of_range("Index element is out of range");
     }
     return data[index];
 }
@@ -86,10 +85,14 @@ void AN_Vector<T>::clear() {
 //void insert(iterator, T);
 
 // Iterators
-//template<class T>
-//iterator begin();
-//template<class T>
-//iterator end();
+template<class T>
+T* AN_Vector<T> ::  begin(){
+    return data;
+}
+template<class T>
+T* AN_Vector<T> :: end(){
+    return data + size;
+}
 
 // Comparison operations
 template<class T>
@@ -141,7 +144,7 @@ bool AN_Vector<T>::empty() {
 }
 
 // ostream operator overloading
-//template<class T>
-//ostream& operator << (ostream& out, const AN_Vector<T> &v) {
-//
-//}
+template<class T>
+ostream& operator << (ostream& out, const AN_Vector<T> &v) {
+
+}

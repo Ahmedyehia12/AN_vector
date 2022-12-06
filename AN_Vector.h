@@ -4,6 +4,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+template <class T> class AN_Vector;
+
+template <class T>
+ostream& operator<<(ostream& os, const AN_Vector<T>& v);
+
 template <class T>
 class AN_Vector {
 private:
@@ -28,8 +33,8 @@ public:
     void clear();
 //    void insert(iterator, T);
     // Iterators
-//    iterator begin();
-//    iterator end();
+    T* begin();
+    T* end();
     // Comparison operations
     bool operator==(const AN_Vector<T>& rhs);
     bool operator< (const AN_Vector<T>& rhs);
@@ -39,7 +44,7 @@ public:
     int resize();
     bool empty();
     // Friends
-//    friend ostream& operator << (ostream& out, const AN_Vector<T> &v);
+    friend ostream& operator << <T> (ostream& out, const AN_Vector<T> &v);
 };
 
 #endif //ASSIGNMENT_3_AN_VECTOR_H
