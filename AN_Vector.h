@@ -33,17 +33,15 @@ public:
     // Modifying operations
     int push_back(T element);
 
+
     T pop_back();
 
-//   void erase(AN_Vector<T>: );
-    void erase(iterator i1, iterator i2);
-
-    void clear();
-
-//    void insert(iterator, T);
+   void erase(iterator i );
+   void erase(iterator i1, iterator i2);
+   void clear();
+   void insert(iterator i, T element);
 // iterator
     iterator begin();
-
     iterator end();
 
 
@@ -61,6 +59,11 @@ public:
 
     bool empty();
     // Friends
-    //friend ostream& operator << (ostream& out, const AN_Vector<T> &v);
+    friend ostream& operator << (ostream& out, const AN_Vector<T> &v){
+        for(int i=0;i<v.size;i++){
+            out << v.data[i] << " ";
+        }
+        return out;
+    }
 };
 #endif //ASSIGNMENT_3_AN_VECTOR_H

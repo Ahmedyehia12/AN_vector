@@ -60,11 +60,11 @@ T& AN_Vector<T> :: operator[](int index){
 // Modifying operations
 template<class T>
 int AN_Vector<T>::push_back(T element) {
-    if(size>=capacity){
-        resize();
-        data[size++] = element;
+    if(size<capacity){
+       data[size++] = element;
     }
     else{
+        resize();
         data[size++] = element;
     }
     return size;
@@ -123,16 +123,14 @@ int AN_Vector<T>::Capacity() const {
 }
 template<class T>
 int AN_Vector<T>::resize() {
-    if (size >= capacity) {
-        capacity *= 2;
-        T *temp = new T[capacity];
+        T *temp = new T[capacity*2];
+           capacity *= 2;
         for (int i = 0; i < size; i++) {
             temp[i] = data[i];
         }
         delete[] data;
         data = temp;
-        delete[]temp;
-    }
+        //delete[]temp;
     return capacity;
 }
 template<class T>
@@ -164,6 +162,47 @@ template<class T>
 T* AN_Vector<T>::end() {
 
 }
+
+template<class T>
+void AN_Vector<T>::erase(AN_Vector::iterator i) {
+    if(i == end()){
+        cout << "Error: No elements to erase" << endl;
+        exit(-1);
+    }
+    for(iterator j = i;j!= end();j++){
+        *j = *(j+1);
+    }
+    size--;
+
+}
+
+template<class T>
+void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
+    if(i>end() || i<begin()){
+        cout << "Error: Invalid iterator" << endl;
+        exit(-1);
+    }
+    else{
+        if(size != capacity){
+           for(iterator j = end();j!=i;j--){
+               *j = *(j-1);
+            }
+            *i = element;
+            size++;
+        }
+        else{
+            resize();
+            for(iterator j = end();j!=i;j--){
+                *j = *(j-1);
+            }
+            *i = element;
+            size++;
+
+        }
+    }
+}
+
+
 
 
 
