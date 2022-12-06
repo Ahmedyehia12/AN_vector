@@ -156,6 +156,15 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
     size -= cnt;
 }
 
+template<class T>
+T* AN_Vector<T>::begin() {
+
+}
+template<class T>
+T* AN_Vector<T>::end() {
+
+}
+
 
 
 
