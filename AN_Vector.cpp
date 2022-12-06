@@ -1,36 +1,38 @@
 #include"AN_Vector.h"
 
+// Constructors and Big 4
 template<class T>
+AN_Vector<T> :: AN_Vector (int cap){
 
-        int AN_Vector<T>::resize() {
-         if (size >= capacity) {
-          capacity *= 2;
-          T *temp = new T[capacity];
-        for (int i = 0; i < size; i++) {
-            temp[i] = data[i];
-        }
-        delete[] data;
-        data = temp;
-        delete []temp;
-    }
-    return capacity;
+}
+template<class T>
+AN_Vector<T> :: AN_Vector (T*, int  n){
+
+}
+template<class T>
+AN_Vector<T> :: AN_Vector (const AN_Vector &rhs){
+
+}
+template<class T>
+AN_Vector<T> :: ~AN_Vector(){
+
+}
+template<class T>
+AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> & other){
+
+}
+template<class T>
+AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector&& other){
+
 }
 
-template<class T>
-int AN_Vector<T>::Size() const {
-    return size;
-}
+// Access operations
+//template<class T>
+//T& operator[](int){
+//
+//}
 
-template<class T>
-bool AN_Vector<T>::empty() {
-    return size == 0;
-}
-
-template<class T>
-int AN_Vector<T>::Capacity() const {
-    return capacity;
-}
-
+// Modifying operations
 template<class T>
 int AN_Vector<T>::push_back(T element) {
     if(size>=capacity){
@@ -42,7 +44,6 @@ int AN_Vector<T>::push_back(T element) {
     }
     return size;
 }
-
 template<class T>
 T AN_Vector<T>::pop_back() {
     if (size == 0) {
@@ -51,12 +52,19 @@ T AN_Vector<T>::pop_back() {
     }
     return data[--size];
 }
-
+//void erase(AN_Vector<T>: );
+//void erase(iterator1, iterator2);
 template<class T>
 void AN_Vector<T>::clear() {
- size = 0;
+    size = 0;
 }
+//void insert(iterator, T);
 
+// Iterators
+//    iterator begin();
+//    iterator end();
+
+// Comparison operations
 template<class T>
 bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
     if(size != other.size)
@@ -72,9 +80,41 @@ bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
     else
         return false;
 }
+template<class T>
+bool AN_Vector<T> :: operator< (const AN_Vector<T>& other){
 
+}
 
+// Capacity operations
+template<class T>
+int AN_Vector<T>::Size() const {
+    return size;
+}
+template<class T>
+int AN_Vector<T>::Capacity() const {
+    return capacity;
+}
+template<class T>
+int AN_Vector<T>::resize() {
+    if (size >= capacity) {
+        capacity *= 2;
+        T *temp = new T[capacity];
+        for (int i = 0; i < size; i++) {
+            temp[i] = data[i];
+        }
+        delete[] data;
+        data = temp;
+        delete[]temp;
+    }
+    return capacity;
+}
+template<class T>
+bool AN_Vector<T>::empty() {
+    return size == 0;
+}
 
+// ostream operator overloading
+template<class T>
+ostream& operator << (ostream& out, AN_Vector<T>v) {
 
-
-
+}
