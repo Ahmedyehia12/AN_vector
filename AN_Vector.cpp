@@ -164,11 +164,11 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
 
 template<class T>
 T* AN_Vector<T>::begin() {
-
+    return data;
 }
 template<class T>
 T* AN_Vector<T>::end() {
-
+    return data+size;
 }
 
 template<class T>
