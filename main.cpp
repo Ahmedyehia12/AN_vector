@@ -13,7 +13,7 @@ s.push_back(33);
 s.push_back(44);
 s.push_back(55);
 s.push_back(222);
-s.insert(s.end(),4);
+s.erase(s.end()-20);
 cout<<s<<endl;
     return 0;
 }

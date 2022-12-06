@@ -173,7 +173,7 @@ T* AN_Vector<T>::end() {
 
 template<class T>
 void AN_Vector<T>::erase(AN_Vector::iterator i) {
-    if(i == end()){
+    if(i > end() || i<begin()){
         cout << "Error: No elements to erase" << endl;
         exit(-1);
     }
