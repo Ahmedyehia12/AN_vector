@@ -7,8 +7,7 @@
 #include<vector>
 using namespace std;
 
-template <class T>
-class AN_Vector {
+template <class T> class AN_Vector {
 private:
         T *data;
         int size ;
@@ -20,10 +19,11 @@ public:
         size = 0;
         data = new T[capacity];
     };
-
     AN_Vector (T*, int  n );
     AN_Vector (const AN_Vector&);
-    ~AN_Vector();
+    ~AN_Vector(){
+        delete []data;
+    }
     AN_Vector &operator=(const AN_Vector<T> & other);
     AN_Vector &operator=(const AN_Vector&& other);
     // Access operations

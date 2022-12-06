@@ -74,3 +74,7 @@ bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
 }
 
 
+
+
+
+
