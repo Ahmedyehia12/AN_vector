@@ -2,35 +2,60 @@
 
 // Constructors and Big 4
 template<class T>
-AN_Vector<T> :: AN_Vector (int cap){
-
+AN_Vector<T> :: AN_Vector (int cap)
+    :size{0}, capacity{cap}, data{new T[capacity]}{
 }
 template<class T>
-AN_Vector<T> :: AN_Vector (T*, int  n){
-
+AN_Vector<T> :: AN_Vector (T *ptr, int n)
+    :size{n}, capacity{n}, data{new T[capacity]}{
+    for (int i = 0;i<n;i++){
+        data[i] = ptr[i];
+    }
 }
 template<class T>
-AN_Vector<T> :: AN_Vector (const AN_Vector &rhs){
-
+AN_Vector<T> :: AN_Vector (const AN_Vector &rhs)
+    :size{rhs.size}, capacity{rhs.capacity}, data{new T[capacity]}{
+    for (int i = 0;i<rhs.Size();i++){
+        data[i] = rhs.data[i];
+    }
 }
 template<class T>
 AN_Vector<T> :: ~AN_Vector(){
-
+    delete[] data;
 }
 template<class T>
-AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> & other){
-
+AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
+    if(this != &rhs){
+        delete[] data;
+        data = new T[rhs.capacity];
+        size = rhs.size;
+        for(int i = 0;i<size;i++){
+            data[i] = rhs.data[i];
+        }
+    }
+    return *this;
 }
 template<class T>
-AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector&& other){
-
+AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
+    if(this != &rhs){
+        delete[] data;
+        data = rhs.data;
+        size = rhs.size;
+        capacity = rhs.capacity;
+        rhs.data = nullptr;
+    }
+    return *this;
 }
 
 // Access operations
-//template<class T>
-//T& operator[](int){
-//
-//}
+template<class T>
+T& AN_Vector<T> :: operator[](int index){
+    if(index < 0 || index >= size){
+        cout << "Error: Array index is out of range!" << endl;
+        exit(-1);
+    }
+    return data[index];
+}
 
 // Modifying operations
 template<class T>
@@ -61,8 +86,10 @@ void AN_Vector<T>::clear() {
 //void insert(iterator, T);
 
 // Iterators
-//    iterator begin();
-//    iterator end();
+//template<class T>
+//iterator begin();
+//template<class T>
+//iterator end();
 
 // Comparison operations
 template<class T>
@@ -114,7 +141,7 @@ bool AN_Vector<T>::empty() {
 }
 
 // ostream operator overloading
-template<class T>
-ostream& operator << (ostream& out, AN_Vector<T>v) {
-
-}
+//template<class T>
+//ostream& operator << (ostream& out, const AN_Vector<T> &v) {
+//
+//}

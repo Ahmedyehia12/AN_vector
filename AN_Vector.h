@@ -7,19 +7,19 @@ using namespace std;
 template <class T>
 class AN_Vector {
 private:
-        T *data;
-        int size ;
-        int capacity;
+    T *data;
+    int size;
+    int capacity;
 public:
     // Constructors and Big 4
     AN_Vector (int cap);
-    AN_Vector (T*, int  n);
+    AN_Vector (T *ptr, int n);
     AN_Vector (const AN_Vector &rhs);
     ~AN_Vector();
-    AN_Vector &operator=(const AN_Vector<T> &other);
-    AN_Vector &operator=(const AN_Vector &&other);
+    AN_Vector &operator=(const AN_Vector<T> &rhs);
+    AN_Vector &operator=(AN_Vector &&rhs);
     // Access operations
-    T& operator[](int);
+    T& operator[](int index);
     // Modifying operations
     int push_back(T element);
     T pop_back();
@@ -31,16 +31,15 @@ public:
 //    iterator begin();
 //    iterator end();
     // Comparison operations
-    bool operator==(const AN_Vector<T>& other);
-    bool operator< (const AN_Vector<T>& other);
+    bool operator==(const AN_Vector<T>& rhs);
+    bool operator< (const AN_Vector<T>& rhs);
     // Capacity operations
     int Size() const;
     int Capacity() const;
     int resize();
     bool empty();
     // Friends
-    friend ostream& operator << (ostream& out, AN_Vector<T>v);
+//    friend ostream& operator << (ostream& out, const AN_Vector<T> &v);
 };
-
 
 #endif //ASSIGNMENT_3_AN_VECTOR_H
