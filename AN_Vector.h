@@ -3,21 +3,19 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-template <class T> class AN_Vector;
-
-template <class T>
-ostream& operator<<(ostream& os, const AN_Vector<T>& v);
-
 template <class T>
 class AN_Vector {
 private:
     T *data;
     int size;
     int capacity;
+    typedef T* iterator ;
 public:
+
     // Constructors and Big 4
     AN_Vector (int cap);
+
+
     AN_Vector (T *ptr, int n);
     AN_Vector (const AN_Vector &rhs);
     ~AN_Vector();
@@ -28,13 +26,15 @@ public:
     // Modifying operations
     int push_back(T element);
     T pop_back();
-//    void erase(AN_Vector<T>: );
-//    void erase(iterator1, iterator2);
-    void clear();
+//   void erase(AN_Vector<T>: );
+   void erase(iterator i1, iterator i2);
+   void clear();
 //    void insert(iterator, T);
-    // Iterators
-    T* begin();
-    T* end();
+// iterator
+iterator  begin();
+iterator end();
+
+
     // Comparison operations
     bool operator==(const AN_Vector<T>& rhs);
     bool operator< (const AN_Vector<T>& rhs);
@@ -44,7 +44,7 @@ public:
     int resize();
     bool empty();
     // Friends
-    friend ostream& operator << <T> (ostream& out, const AN_Vector<T> &v);
+//    friend ostream& operator << (ostream& out, const AN_Vector<T> &v);
 };
 
 #endif //ASSIGNMENT_3_AN_VECTOR_H

@@ -3,8 +3,8 @@
 // Constructors and Big 4
 template<class T>
 AN_Vector<T> :: AN_Vector (int cap)
-    :size{0}, capacity{cap}, data{new T[capacity]}{
-}
+    :size{0}, capacity{cap}, data{new T[capacity]} {}
+
 template<class T>
 AN_Vector<T> :: AN_Vector (T *ptr, int n)
     :size{n}, capacity{n}, data{new T[capacity]}{
@@ -51,7 +51,8 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
 template<class T>
 T& AN_Vector<T> :: operator[](int index){
     if(index < 0 || index >= size){
-        throw std::out_of_range("Index element is out of range");
+        cout << "Error: Array index is out of range!" << endl;
+        exit(-1);
     }
     return data[index];
 }
@@ -85,14 +86,10 @@ void AN_Vector<T>::clear() {
 //void insert(iterator, T);
 
 // Iterators
-template<class T>
-T* AN_Vector<T> ::  begin(){
-    return data;
-}
-template<class T>
-T* AN_Vector<T> :: end(){
-    return data + size;
-}
+//template<class T>
+//iterator begin();
+//template<class T>
+//iterator end();
 
 // Comparison operations
 template<class T>
@@ -143,8 +140,30 @@ bool AN_Vector<T>::empty() {
     return size == 0;
 }
 
-// ostream operator overloading
 template<class T>
-ostream& operator << (ostream& out, const AN_Vector<T> &v) {
-
+void AN_Vector<T>::erase(iterator i1, iterator i2) {
+    if(i1 == i2){
+        cout << "Error: No elements to erase" << endl;
+        exit(-1);
+    }
+    int cnt = 0;
+    for(iterator i = i1;i!=i2;i++){
+        cnt++;
+    }
+    for(iterator i = i1;i!=i2;i++){
+        *i = *(i+cnt);
+    }
+    size -= cnt;
 }
+
+
+
+
+
+
+
+// ostream operator overloading
+//template<class T>
+//ostream& operator << (ostream& out, const AN_Vector<T> &v) {
+//
+//}
