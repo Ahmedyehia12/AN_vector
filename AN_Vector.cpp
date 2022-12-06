@@ -51,7 +51,6 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
 template<class T>
 T& AN_Vector<T> :: operator[](int index){
     if(index < 0 || index >= size){
-
         throw out_of_range("Index element is out of range");
         exit(-1);
         //exit(-1);
@@ -62,13 +61,17 @@ T& AN_Vector<T> :: operator[](int index){
 // Modifying operations
 template<class T>
 int AN_Vector<T>::push_back(T element) {
+    // check if the vector is full
     if(size<capacity){
+        // if not full, add the element to the end
        data[size++] = element;
     }
     else{
+        // if full, resize the vector
         resize();
         data[size++] = element;
     }
+    // return the size of the vector
     return size;
 }
 template<class T>
