@@ -73,18 +73,21 @@ int AN_Vector<T>::push_back(T element) {
 }
 template<class T>
 T AN_Vector<T>::pop_back() {
+    //checking if the vector is empty
     if (size == 0) {
         cout << "Error: Vector is empty" << endl;
         exit(-1);
     }
+    //decrementing the size of the vector
     return data[--size];
 }
 
 template<class T>
 void AN_Vector<T>::clear() {
+    //setting the size to 0
     size = 0;
 }
-//void insert(iterator, T);
+
 
 // Iterators
 template<class T>
@@ -99,28 +102,37 @@ T* AN_Vector<T> :: end(){
 // Comparison operations
 template<class T>
 bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
+    //checking if the sizes are equal
     if(size != other.size)
         return false;
+    //checking if the elements are equal
     int cnt = 0;
     for(int i=0;i<size;i++){
         if(this->data[i] == other.data[i]){
             cnt++;
         }
     }
+    //if the elements are equal then return true
     if(cnt == size)
         return true;
     else
+        //if the elements are not equal then return false
         return false;
 }
 template<class T>
-bool AN_Vector<T> :: operator< (const AN_Vector<T>& other) {
-    if (size != other.size) {
-        return false;
-    } else {
+bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
+{
+    //checking if the sizes are equal
+     if (size != other.size) {
+        return false;}
+    //checking if the elements are equal
+     else {
         for (int i = 0; i < size; i++) {
             if (data[i] < other.data[i])
+                // if the elements are not equal then return false
                 return false;
         }
+        //if the elements are equal then return true
         return true;
     }
 }
@@ -128,57 +140,72 @@ bool AN_Vector<T> :: operator< (const AN_Vector<T>& other) {
 // Capacity operations
 template<class T>
 int AN_Vector<T>::Size() const {
+    //returning the size of the vector
     return size;
 }
 template<class T>
 int AN_Vector<T>::Capacity() const {
+    //returning the capacity of the vector
     return capacity;
 }
 template<class T>
 int AN_Vector<T>::resize() {
+    //creating a new array with double the capacity
         T *temp = new T[capacity*2];
            capacity *= 2;
         for (int i = 0; i < size; i++) {
             temp[i] = data[i];
         }
+        //deleting the old array
         delete[] data;
+        //pointing the data to the new array
         data = temp;
         //delete[]temp;
+        //returning the new capacity
     return capacity;
 }
 template<class T>
 bool AN_Vector<T>::empty() {
+    //checking if the size is 0
     return size == 0;
 }
 template<class T>
 void AN_Vector<T>::erase(iterator i1, iterator i2) {
+    //checking if the iterators are valid
     if(i1 == i2){
         cout << "Error: No elements to erase" << endl;
         exit(-1);
     }
     int cnt = 0;
     for(iterator i = i1;i!=i2;i++){
+        //counting the number of elements to be erased
         cnt++;
     }
     for(iterator i = i1;i!=i2;i++){
+        //shifting the elements to the left
         *i = *(i+cnt);
     }
+    //decrementing the size of the vector
     size -= cnt;
 }
 template<class T>
 void AN_Vector<T>::erase(AN_Vector::iterator i) {
+    //checking if the iterator is valid
     if(i > end() || i<begin()){
         cout << "Error: No elements to erase" << endl;
         exit(-1);
     }
     for(iterator j = i;j!= end();j++){
+        //shifting the elements to the left
         *j = *(j+1);
     }
+    //decrementing the size of the vector
     size--;
 
 }
 template<class T>
 void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
+    //checking if the iterator is valid
     if(i>end() || i<begin()){
         cout << "Error: Invalid iterator" << endl;
         exit(-1);
@@ -186,17 +213,24 @@ void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
     else{
         if(size != capacity){
            for(iterator j = end();j!=i;j--){
+               //shifting the elements to the right
                *j = *(j-1);
             }
+           //inserting the element
             *i = element;
+           //incrementing the size of the vector
             size++;
         }
         else{
+            //resizing the vector
             resize();
             for(iterator j = end();j!=i;j--){
+                //shifting the elements to the right
                 *j = *(j-1);
             }
+            //inserting the element
             *i = element;
+            //incrementing the size of the vector
             size++;
 
         }
@@ -207,6 +241,7 @@ void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
 template<class T>
 ostream& operator << (ostream& out, const AN_Vector<T> &v) {
     for(int i=0;i<v.size;i++){
+        //printing the elements of the vector
         out << v.data[i] << " ";
     }
     return out;
