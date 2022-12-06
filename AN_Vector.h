@@ -29,10 +29,10 @@ public:
     // Modifying operations
     int push_back(T element);
     T pop_back();
-//   void erase(AN_Vector<T>: );
+   void erase(iterator i );
    void erase(iterator i1, iterator i2);
    void clear();
-//    void insert(iterator, T);
+   void insert(iterator i , T element);
     // iterators
     iterator begin();
     iterator end();
