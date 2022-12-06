@@ -6,9 +6,10 @@
 #include <algorithm>
 #include<vector>
 using namespace std;
+
 template <class T>
 class AN_Vector {
-protected:
+private:
         T *data;
         int size ;
         int capacity;

@@ -1,7 +1,5 @@
 #include"AN_Vector.h"
 
-
-
 template<class T>
 
         int AN_Vector<T>::resize() {
