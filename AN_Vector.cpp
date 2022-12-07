@@ -32,7 +32,8 @@ AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
         // delete current storage
         delete[] data;
         // allocate new storage on the heap
-        data = new T[rhs.capacity];
+        capacity = rhs.capacity;
+        data = new T[capacity];
         size = rhs.size;
         // perform the copy
         for(int i = 0;i<size;i++){
@@ -42,9 +43,9 @@ AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
     return *this;
 }
 template<class T>
-AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
+AN_Vector<T> &AN_Vector <T> :: operator= ( AN_Vector<T> &&rhs)  {
     // check if we are self assigning
-    if(this != &rhs){
+     if(this != &rhs){
         // delete current storage
         delete[] data;
         // copy the pointer to lhs from rhs
@@ -53,9 +54,12 @@ AN_Vector<T> &AN_Vector <T> :: operator=(AN_Vector &&rhs){
         capacity = rhs.capacity;
         // null out the rhs pointer
         rhs.data = nullptr;
+        rhs.size = 0;
+        rhs.capacity =0;
     }
     return *this;
 }
+
 
 // Access operations
 template<class T>
@@ -166,8 +170,6 @@ void AN_Vector<T>::insert(AN_Vector<T>::iterator i , T element) {
               }
               else{
                 //if the iterator is not at the end of the vector, shift the elements to the right
-
-                //storing the element at the iterator
                 for(iterator j = end();j!=i;j--){
                      //shifting the elements to the right
                      *j = *(j-1);

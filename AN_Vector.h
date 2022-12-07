@@ -1,5 +1,7 @@
 #ifndef ASSIGNMENT_3_AN_VECTOR_H
 #define ASSIGNMENT_3_AN_VECTOR_H
+//Author 1 : Ahmed Yehia Abdel-moaty(20210049)
+//Author 2 : Nada Mohammed Abdel-
 
 #include <bits/stdc++.h>
 using namespace std;
