@@ -113,7 +113,7 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
     size -= cnt;
 }
 template<class T>
-void AN_Vector<T>::erase(AN_Vector::iterator i) {
+void AN_Vector<T>::erase(AN_Vector<T>::iterator i) {
     //checking if the iterator is valid
     if(i > end() || i<begin()){
         cout << "Error: No elements to erase" << endl;
@@ -133,7 +133,7 @@ void AN_Vector<T>::clear() {
     size = 0;
 }
 template<class T>
-void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
+void AN_Vector<T>::insert(AN_Vector<T>::iterator i , T element) {
     //checking if the iterator is valid
     if(i>end() || i<begin()){
         cout << "Error: Invalid iterator" << endl;
@@ -141,26 +141,41 @@ void AN_Vector<T>::insert(AN_Vector::iterator i , T element) {
     }
     else{
         if(size != capacity){
-           for(iterator j = end();j!=i;j--){
-               //shifting the elements to the right
-               *j = *(j-1);
+            if(i == end()){
+                //if the iterator is at the end of the vector, just add the element
+                data[size++] = element;
             }
-           //inserting the element
-            *i = element;
-           //incrementing the size of the vector
-            size++;
+            else{
+                //if the iterator is not at the end of the vector, shift the elements to the right
+                //storing the element at the iterator
+                for(iterator j = end();j!=i;j--){
+                    //shifting the elements to the right
+                    *j = *(j-1);
+                }
+                //adding the element at the iterator
+                *i = element;
+                size++;
+            }
         }
         else{
             //resizing the vector
             resize();
-            for(iterator j = end();j!=i;j--){
-                //shifting the elements to the right
-                *j = *(j-1);
-            }
-            //inserting the element
-            *i = element;
-            //incrementing the size of the vector
-            size++;
+           if(i == end()){
+                //if the iterator is at the end of the vector, just add the element
+                data[size++] = element;
+              }
+              else{
+                //if the iterator is not at the end of the vector, shift the elements to the right
+
+                //storing the element at the iterator
+                for(iterator j = end();j!=i;j--){
+                     //shifting the elements to the right
+                     *j = *(j-1);
+                }
+                //adding the element at the iterator
+                *i = element;
+                size++;
+           }
 
         }
     }
