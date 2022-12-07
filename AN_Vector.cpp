@@ -1,5 +1,10 @@
 #include"AN_Vector.h"
 //cpp file
+/**
+ * @file this file contains the implementation of the AN_Vector class
+ * @note This class is a template class
+ * @note This class is a container class
+ */
 // Constructors and Big 4
 template<class T>
 /**
