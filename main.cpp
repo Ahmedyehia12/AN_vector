@@ -1,5 +1,5 @@
 /**
- * @
+ * @brief The main function
  */
 
 
@@ -8,7 +8,9 @@
 
 int main() {
 
-
+/**
+ * @brief test the AN_Vector class
+ */
 int arr[5] = {1,2,3,4,5};
 AN_Vector<int> s1 (arr,5);
     AN_Vector<int> s2(2);

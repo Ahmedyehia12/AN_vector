@@ -2,10 +2,19 @@
 //cpp file
 // Constructors and Big 4
 template<class T>
+/**
+ * @brief Construct a new AN_Vector object
+ * @note This is the default constructor
+ */
 AN_Vector<T> :: AN_Vector (int cap)
     :size{0}, capacity{cap}, data{new T[capacity]}{  // constructor to initialize by specific capacity and size to zero
 }
 template<class T>
+/**
+ * @brief Construct a new AN_Vector object
+ * @param ptr
+ * @param n
+ */
 AN_Vector<T> :: AN_Vector (T *ptr, int n)
     :size{n}, capacity{n}, data{new T[capacity]}{   // constructor to initialize by n elements from an array
     for (int i = 0;i<n;i++){
@@ -13,6 +22,10 @@ AN_Vector<T> :: AN_Vector (T *ptr, int n)
     }
 }
 template<class T>
+/**
+ * @brief Construct a new AN_Vector object
+ * @param rhs
+ */
 AN_Vector<T> :: AN_Vector (const AN_Vector &rhs)
     :size{rhs.size}, capacity{rhs.capacity}, data{new T[capacity]}{
     // create a copy of the pointed data
@@ -21,11 +34,19 @@ AN_Vector<T> :: AN_Vector (const AN_Vector &rhs)
     }
 }
 template<class T>
+/**
+ * @brief Destroy the AN_Vector object
+ */
 AN_Vector<T> :: ~AN_Vector(){
     // delete allocated memory
     delete[] data;
 }
 template<class T>
+/**
+ * @brief Copy assignment operator
+ * @param rhs
+ * @return AN_Vector<T>&
+ */
 AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
     // check if we are self assigning
     if(this != &rhs){
@@ -44,6 +65,11 @@ AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
     return *this;
 }
 template<class T>
+/**
+ * @brief Move assignment operator
+ * @param rhs
+ * @return AN_Vector<T>&
+ */
 AN_Vector<T> &AN_Vector <T> :: operator= ( AN_Vector<T> &&rhs)  {
     // check if we are self assigning
      if(this != &rhs){
@@ -64,6 +90,11 @@ AN_Vector<T> &AN_Vector <T> :: operator= ( AN_Vector<T> &&rhs)  {
 
 // Access operations
 template<class T>
+/**
+ * @brief  get the element at a specific index
+ * @param index
+ * @return T&
+ */
 T& AN_Vector<T> :: operator[](int index){
     // check if the index is in the range of the vector or not
     if(index < 0 || index >= size){
@@ -74,6 +105,11 @@ T& AN_Vector<T> :: operator[](int index){
 
 // Modifying operations
 template<class T>
+/**
+ * @brief  add an element to the end of the vector
+ * @param element
+ * @return size of the vector
+ */
 int AN_Vector<T>::push_back(T element) {
     // check if the vector is full
     if(size<capacity){
@@ -89,6 +125,10 @@ int AN_Vector<T>::push_back(T element) {
     return size;
 }
 template<class T>
+/**
+ * @brief  remove the last element of the vector
+ * @return the last element of the vector
+ */
 T AN_Vector<T>::pop_back() {
     //checking if the vector is empty
     if (size == 0) {
@@ -99,6 +139,11 @@ T AN_Vector<T>::pop_back() {
     return data[--size];
 }
 template<class T>
+/**
+ * @brief  erase an element between two iterators
+ * @param i1
+ * @param i2
+ */
 void AN_Vector<T>::erase(iterator i1, iterator i2) {
     //checking if the iterators are valid
     if(i1 == i2){
@@ -119,6 +164,10 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
     size -= cnt;
 }
 template<class T>
+/**
+ * @brief  erase an element at a specific index
+ * @param i
+ */
 void AN_Vector<T>::erase(AN_Vector<T>::iterator i) {
     //checking if the iterator is valid
     if(i > end() || i<begin()){
@@ -134,11 +183,19 @@ void AN_Vector<T>::erase(AN_Vector<T>::iterator i) {
 
 }
 template<class T>
+/**
+ * @brief  clear the vector
+ */
 void AN_Vector<T>::clear() {
     //setting the size to 0
     size = 0;
 }
 template<class T>
+/**
+ * @brief  insert an element at a specific index
+ * @param i
+ * @param element
+ */
 void AN_Vector<T>::insert(AN_Vector<T>::iterator i , T element) {
     //checking if the iterator is valid
     if(i>end() || i<begin()){
@@ -187,11 +244,19 @@ void AN_Vector<T>::insert(AN_Vector<T>::iterator i , T element) {
 
 // Iterators
 template<class T>
+/**
+ * @brief  return the iterator at the beginning of the vector
+ * @return iterator
+ */
 T* AN_Vector<T>::begin(){
     //  returns an iterator which points to the first element of the vector
     return data;
 }
 template<class T>
+/**
+ * @brief  return the iterator at the end of the vector
+ * @return iterator
+ */
 T* AN_Vector<T> :: end(){
     //  returns an iterator which points to past the end element of the vector
     return data + size;
@@ -199,6 +264,11 @@ T* AN_Vector<T> :: end(){
 
 // Comparison operations
 template<class T>
+/**
+ * @brief  check if two vectors are equal
+ * @param other
+ * @return true if equal, false otherwise
+ */
 bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
     //checking if the sizes are equal
     if(size != other.size)
@@ -218,6 +288,11 @@ bool AN_Vector<T>::operator==(const AN_Vector<T> & other) {
         return false;
 }
 template<class T>
+/**
+ * @brief  if the vector is smaller than the other vectora
+ * @param other
+ * @return true if smaller, false otherwise
+ */
 bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
 {
     //checking if the sizes are equal
@@ -237,16 +312,28 @@ bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
 
 // Capacity operations
 template<class T>
+/**
+ * @brief  return the size of the vector
+ * @return size
+ */
 int AN_Vector<T>::Size() const {
     //returning the size of the vector
     return size;
 }
 template<class T>
+/**
+ * @brief  return the capacity of the vector
+ * @return capacity
+ */
 int AN_Vector<T>::Capacity() const {
     //returning the capacity of the vector
     return capacity;
 }
 template<class T>
+/**
+ * @brief  resize the vector
+ * @return capacity of the vector
+ */
 int AN_Vector<T>::resize() {
     //creating a new array with double the capacity
     T *temp = new T[capacity*2];
@@ -263,6 +350,10 @@ int AN_Vector<T>::resize() {
     return capacity;
 }
 template<class T>
+/**
+ * @brief  check if the vector is empty
+ * @return true if empty, false otherwise
+ */
 bool AN_Vector<T>::empty() {
     //checking if the size is 0
     return size == 0;
@@ -270,6 +361,12 @@ bool AN_Vector<T>::empty() {
 
 // ostream operator overloading
 template<class T>
+/**
+ * @brief  overloading the ostream operator
+ * @param os
+ * @param v
+ * @return ostream
+ */
 ostream& operator << (ostream& out, const AN_Vector<T> &v) {
     for(int i=0;i<v.size;i++){
         //printing the elements of the vector
