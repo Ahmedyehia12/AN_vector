@@ -32,6 +32,7 @@ AN_Vector<T> &AN_Vector <T> :: operator=(const AN_Vector<T> &rhs){
         // delete current storage
         delete[] data;
         // allocate new storage on the heap
+        // copy the data
         capacity = rhs.capacity;
         data = new T[capacity];
         size = rhs.size;
