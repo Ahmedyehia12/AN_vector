@@ -9,15 +9,13 @@
  * @version 1.0
  * @date 2022-012-7
  * @note This file is part of the 3rd assignment of the OOP course
- *
  */
-//has to be included in the header file
 
 #include <bits/stdc++.h>
 using namespace std;
 
 template <class T> class AN_Vector;
-
+//has to be included in the header file
 template <class T>
 ostream& operator<<(ostream& os, const AN_Vector<T>& v);
 /**
