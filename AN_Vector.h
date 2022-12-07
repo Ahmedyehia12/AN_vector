@@ -39,8 +39,8 @@ private:
      * @brief The capacity of the vector
      */
     int capacity;
-    typedef T* iterator;
 public:
+    typedef T* iterator;
     // Constructors and Big 4
     /**
      * @brief Construct a new AN_Vector object
