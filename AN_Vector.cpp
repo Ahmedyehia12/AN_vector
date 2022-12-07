@@ -115,6 +115,7 @@ void AN_Vector<T>::erase(iterator i1, iterator i2) {
         *i = *(i+cnt);
     }
     //decrementing the size of the vector
+
     size -= cnt;
 }
 template<class T>

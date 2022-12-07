@@ -1,5 +1,6 @@
 #ifndef ASSIGNMENT_3_AN_VECTOR_H
 #define ASSIGNMENT_3_AN_VECTOR_H
+//has to be included in the header file
 /**
  * @file AN_Vector.h
  * @authors Author 1 : Ahmed Yehia Abdel-moaty(20210049)
@@ -8,6 +9,7 @@
  * @version 1.0
  * @date 2022-012-7
  * @note This file is part of the 3rd assignment of the OOP course
+ *
  */
 
 
