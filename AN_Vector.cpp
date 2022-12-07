@@ -226,11 +226,11 @@ bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
     else {
         for (int i = 0; i < size; i++) {
             if (data[i] < other.data[i])
-                // if the elements are not equal then return false
-                return false;
+               //if the elements are equal then return true
+                return true;
         }
-        //if the elements are equal then return true
-        return true;
+        //if the elements are equal then return false
+        return false;
     }
 }
 
