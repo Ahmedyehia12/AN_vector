@@ -5,6 +5,7 @@
 #include "AN_Vector.cpp"
 
 int main() {
+
     int arr[5] = {1,2,3,4,5};
     AN_Vector<int> s1 (arr,5);
     AN_Vector<int> s2(2);
@@ -22,5 +23,6 @@ int main() {
     s.insert(s.begin()+2, 9);
     cout<<s;
      */
+
     return 0;
 }
