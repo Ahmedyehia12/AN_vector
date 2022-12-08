@@ -20,6 +20,7 @@ int main() {
     s.push_back(8);
     cout<<s<<endl;
     s.insert(s.begin()+2, 9);
-    cout<<s;*/
+    cout<<s;
+     */
     return 0;
 }
