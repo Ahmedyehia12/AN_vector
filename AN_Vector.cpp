@@ -21,7 +21,7 @@ template<class T>
  * @param n
  */
 AN_Vector<T> :: AN_Vector (T *ptr, int n)
-    :size{n}, capacity{n}, data{new T[capacity]}{   // constructor to initialize by n elements from an array
+    :size{n}, capacity{n+2}, data{new T[capacity]}{   // constructor to initialize by n elements from an array
     for (int i = 0;i<n;i++){
         data[i] = ptr[i];
     }
