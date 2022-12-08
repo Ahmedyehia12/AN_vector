@@ -20,8 +20,14 @@ template<class T>
  * @param ptr
  * @param n
  */
-AN_Vector<T> :: AN_Vector (T *ptr, int n)
-    :size{n}, capacity{n+2}, data{new T[capacity]}{   // constructor to initialize by n elements from an array
+AN_Vector<T> :: AN_Vector (T *ptr, int n){   // constructor to initialize by n elements from an array
+    size = n;
+    // if capacity is less than size, double the current capacity value
+    while(capacity < size){
+        capacity *= 2;
+    }
+    data = new T[capacity];
+    // initialize the vector by n elements
     for (int i = 0;i<n;i++){
         data[i] = ptr[i];
     }

@@ -38,7 +38,7 @@ private:
     /**
      * @brief The capacity of the vector
      */
-    int capacity;
+    int capacity = 1;
 public:
     typedef T* iterator;
     // Constructors and Big 4
