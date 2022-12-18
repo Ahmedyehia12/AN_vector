@@ -1,0 +1,55 @@
+\hypertarget{_a_n___vector_8h_source}{}\doxysection{AN\+\_\+\+Vector.\+h}
+\mbox{\hyperlink{_a_n___vector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ASSIGNMENT\_3\_AN\_VECTOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ASSIGNMENT\_3\_AN\_VECTOR\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{//has to be included in the header file}}
+\DoxyCodeLine{14 \textcolor{comment}{}\textcolor{preprocessor}{\#include <bits/stdc++.h>}}
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{template} <\textcolor{keyword}{class} T> \textcolor{keyword}{class }\mbox{\hyperlink{class_a_n___vector}{AN\_Vector}};}
+\DoxyCodeLine{18 \textcolor{comment}{//has to be included in the header file}}
+\DoxyCodeLine{19 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{20 ostream\& \mbox{\hyperlink{_a_n___vector_8h_a51b444d3a7745879b5064726e3827ef6}{operator<<}}(ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector<T>}}\& v);}
+\DoxyCodeLine{27 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     T *data;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} capacity = 1;}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \textcolor{keyword}{typedef} T* iterator;}
+\DoxyCodeLine{44     \textcolor{comment}{// Constructors and Big 4}}
+\DoxyCodeLine{49 \textcolor{comment}{}    \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} (\textcolor{keywordtype}{int} cap);}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} (T *ptr, \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{60     \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} (\textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} \&rhs);}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_a_n___vector_af11fcbd98c77c51dfeb44686077651b9}{\string~AN\_Vector}}();}
+\DoxyCodeLine{70     \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} \&\mbox{\hyperlink{class_a_n___vector_a534780201e77e9f2a06868890750088b}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector<T>}} \&rhs);}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} \&\mbox{\hyperlink{class_a_n___vector_a534780201e77e9f2a06868890750088b}{operator=}}(\mbox{\hyperlink{class_a_n___vector}{AN\_Vector}} \&\&rhs);}
+\DoxyCodeLine{77     \textcolor{comment}{// Access operations}}
+\DoxyCodeLine{83 \textcolor{comment}{}    T\& \mbox{\hyperlink{class_a_n___vector_a9a1c5ee55e98f3e46eedbbf9f40f57fc}{operator[]}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{84     \textcolor{comment}{// Modifying operations}}
+\DoxyCodeLine{89 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_a_n___vector_a8bb32ec64e51881e5e6449f000336796}{push\_back}}(T element);}
+\DoxyCodeLine{94     T \mbox{\hyperlink{class_a_n___vector_a0ed6f6f3f5ac7d8ca9be4893c2aa5320}{pop\_back}}();}
+\DoxyCodeLine{99    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_n___vector_a504dc6a00aba0cbe60332a740a8b0fde}{erase}}(iterator i );}
+\DoxyCodeLine{105    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_n___vector_a504dc6a00aba0cbe60332a740a8b0fde}{erase}}(iterator i1, iterator i2);}
+\DoxyCodeLine{110   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_n___vector_aab649ed5516deb8bc7d72e14565110e2}{clear}}();}
+\DoxyCodeLine{117    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_n___vector_a8da5faba6484c82cc68e75194f95a1a4}{insert}}(iterator i , T element);}
+\DoxyCodeLine{118     \textcolor{comment}{// iterators}}
+\DoxyCodeLine{123 \textcolor{comment}{}    iterator \mbox{\hyperlink{class_a_n___vector_a07efb1f4cafcef4cba4ff8aed63ea596}{begin}}();}
+\DoxyCodeLine{128     iterator \mbox{\hyperlink{class_a_n___vector_aa46edb4eb9af3d1371100172984bd64c}{end}}();}
+\DoxyCodeLine{129     \textcolor{comment}{// Comparison operations}}
+\DoxyCodeLine{137 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_a_n___vector_a64b926182b22040fcf796c7db334948c}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector<T>}}\& rhs);}
+\DoxyCodeLine{144     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_a_n___vector_a095b575728da7f8e449c27c30c1262eb}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector<T>}}\& rhs);}
+\DoxyCodeLine{145     \textcolor{comment}{// Capacity operations}}
+\DoxyCodeLine{150 \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_a_n___vector_a3cf82f63703f6bcc951cd74e60212f4e}{Size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_a_n___vector_a5024f0ece0b094e199ce8935be3db725}{Capacity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{160     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_a_n___vector_a9859a51778525f240e30621cdeb9dec8}{resize}}();}
+\DoxyCodeLine{166     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_a_n___vector_a3b8cecaafaa26454edec5d28ce1e7fa2}{empty}}();}
+\DoxyCodeLine{167     \textcolor{comment}{// Friends}}
+\DoxyCodeLine{174 \textcolor{comment}{}    \textcolor{keyword}{friend} ostream\& operator << <T> (ostream\& out, \textcolor{keyword}{const} \mbox{\hyperlink{class_a_n___vector}{AN\_Vector<T>}} \&v);}
+\DoxyCodeLine{175 \};}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ASSIGNMENT\_3\_AN\_VECTOR\_H}}
+
+\end{DoxyCode}
