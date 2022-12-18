@@ -306,14 +306,7 @@ template<class T>
  */
 bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
 {
-    //checking if the sizes are equal
-    if (size < other.size) {
-        return true;}
-    else if(size > other.size){
-        return false;
-    }
 
-    else {
         for (int i = 0; i < size; i++) {
            if(data[i]!=(other.data[i])){
               if(data[i]<other.data[i]){
@@ -327,7 +320,7 @@ bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
         //if the elements are equal then return false
         return false;
     }
-}
+
 
 // Capacity operations
 template<class T>
