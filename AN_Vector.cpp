@@ -324,6 +324,7 @@ bool AN_Vector<T> :: operator< (const AN_Vector<T>& other)
 
 // Capacity operations
 template<class T>
+//  returns the number of elements in the vector
 /**
  * @brief  return the size of the vector
  * @return size
