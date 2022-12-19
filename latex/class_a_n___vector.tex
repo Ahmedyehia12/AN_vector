@@ -1,0 +1,487 @@
+\hypertarget{class_a_n___vector}{}\doxysection{AN\+\_\+\+Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_a_n___vector}\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+
+
+This class represents a vector.  
+
+
+
+
+{\ttfamily \#include $<$AN\+\_\+\+Vector.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_n___vector_a2c199d27e257b55482093176e891ed5d}\label{class_a_n___vector_a2c199d27e257b55482093176e891ed5d}} 
+typedef T $\ast$ {\bfseries iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_n___vector_a2e394b2b82a05710929add7db562128b}{AN\+\_\+\+Vector}} (int cap)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_n___vector_a8e109626f1e3c79e51ae524713299976}{AN\+\_\+\+Vector}} (T $\ast$ptr, int n)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_n___vector_a1232735c2d885f066bc6da6a7346da4a}{AN\+\_\+\+Vector}} (const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_n___vector_af11fcbd98c77c51dfeb44686077651b9}\label{class_a_n___vector_af11fcbd98c77c51dfeb44686077651b9}} 
+{\bfseries $\sim$\+AN\+\_\+\+Vector} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} \& \mbox{\hyperlink{class_a_n___vector_a534780201e77e9f2a06868890750088b}{operator=}} (const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} \& \mbox{\hyperlink{class_a_n___vector_a0b6df4363055ca5a009aa64e273770d7}{operator=}} (\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{class_a_n___vector_a9a1c5ee55e98f3e46eedbbf9f40f57fc}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\begin{DoxyCompactList}\small\item\em get the element at a specific index \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_a_n___vector_a8bb32ec64e51881e5e6449f000336796}{push\+\_\+back}} (T element)
+\begin{DoxyCompactList}\small\item\em push an element to the end of the vector \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_a_n___vector_a0ed6f6f3f5ac7d8ca9be4893c2aa5320}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em pop an element from the end of the vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_n___vector_a504dc6a00aba0cbe60332a740a8b0fde}{erase}} (iterator i)
+\begin{DoxyCompactList}\small\item\em erase an element from the vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_n___vector_a1db9aa81f04de1bc67ec961c5a757b76}{erase}} (iterator i1, iterator i2)
+\begin{DoxyCompactList}\small\item\em erase a range of elements from the vector \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_n___vector_aab649ed5516deb8bc7d72e14565110e2}\label{class_a_n___vector_aab649ed5516deb8bc7d72e14565110e2}} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em clear the vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_n___vector_a8da5faba6484c82cc68e75194f95a1a4}{insert}} (iterator i, T element)
+\begin{DoxyCompactList}\small\item\em insert an element at a specific index \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{class_a_n___vector_a07efb1f4cafcef4cba4ff8aed63ea596}{begin}} ()
+\begin{DoxyCompactList}\small\item\em get the first element of the vector \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{class_a_n___vector_aa46edb4eb9af3d1371100172984bd64c}{end}} ()
+\begin{DoxyCompactList}\small\item\em get the last element of the vector \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_n___vector_a64b926182b22040fcf796c7db334948c}{operator==}} (const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em check if two vectors are equal \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_n___vector_a095b575728da7f8e449c27c30c1262eb}{operator$<$}} (const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em check if a vector is smaller than another vector \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_a_n___vector_a3cf82f63703f6bcc951cd74e60212f4e}{Size}} () const
+\begin{DoxyCompactList}\small\item\em get the size of the vector \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_a_n___vector_a5024f0ece0b094e199ce8935be3db725}{Capacity}} () const
+\begin{DoxyCompactList}\small\item\em get the capacity of the vector \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_a_n___vector_a9859a51778525f240e30621cdeb9dec8}{resize}} ()
+\begin{DoxyCompactList}\small\item\em resize the vector \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_n___vector_a3b8cecaafaa26454edec5d28ce1e7fa2}{empty}} ()
+\begin{DoxyCompactList}\small\item\em check if the vector is empty \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{operator}} (ostream \&out, const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&v)
+\begin{DoxyCompactList}\small\item\em print the vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class AN\+\_\+\+Vector$<$ T $>$}
+This class represents a vector. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the elements in the vector \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+This class is a template class 
+
+This class is a container class 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_n___vector_a2e394b2b82a05710929add7db562128b}\label{class_a_n___vector_a2e394b2b82a05710929add7db562128b}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!AN\_Vector@{AN\_Vector}}
+\index{AN\_Vector@{AN\_Vector}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AN\_Vector()}{AN\_Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector}{\+::\+AN\+\_\+\+Vector}} (\begin{DoxyParamCaption}\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. 
+
+\begin{DoxyNote}{Note}
+This is the default constructor 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_a_n___vector_a8e109626f1e3c79e51ae524713299976}\label{class_a_n___vector_a8e109626f1e3c79e51ae524713299976}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!AN\_Vector@{AN\_Vector}}
+\index{AN\_Vector@{AN\_Vector}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AN\_Vector()}{AN\_Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector}{\+::\+AN\+\_\+\+Vector}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & \\
+\hline
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_n___vector_a1232735c2d885f066bc6da6a7346da4a}\label{class_a_n___vector_a1232735c2d885f066bc6da6a7346da4a}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!AN\_Vector@{AN\_Vector}}
+\index{AN\_Vector@{AN\_Vector}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AN\_Vector()}{AN\_Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector}{\+::\+AN\+\_\+\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_n___vector_a07efb1f4cafcef4cba4ff8aed63ea596}\label{class_a_n___vector_a07efb1f4cafcef4cba4ff8aed63ea596}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::begin}
+
+
+
+get the first element of the vector 
+
+return the iterator at the beginning of the vector
+
+\begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a5024f0ece0b094e199ce8935be3db725}\label{class_a_n___vector_a5024f0ece0b094e199ce8935be3db725}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!Capacity@{Capacity}}
+\index{Capacity@{Capacity}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Capacity()}{Capacity()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::\+Capacity}
+
+
+
+get the capacity of the vector 
+
+return the capacity of the vector
+
+\begin{DoxyReturn}{Returns}
+int
+
+capacity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a3b8cecaafaa26454edec5d28ce1e7fa2}\label{class_a_n___vector_a3b8cecaafaa26454edec5d28ce1e7fa2}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::empty}
+
+
+
+check if the vector is empty 
+
+\begin{DoxyReturn}{Returns}
+true if the vector is empty 
+
+false if the vector is not empty
+
+true if empty, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_aa46edb4eb9af3d1371100172984bd64c}\label{class_a_n___vector_aa46edb4eb9af3d1371100172984bd64c}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!end@{end}}
+\index{end@{end}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::end}
+
+
+
+get the last element of the vector 
+
+return the iterator at the end of the vector
+
+\begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a504dc6a00aba0cbe60332a740a8b0fde}\label{class_a_n___vector_a504dc6a00aba0cbe60332a740a8b0fde}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{iterator}]{i }\end{DoxyParamCaption})}
+
+
+
+erase an element from the vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_n___vector_a1db9aa81f04de1bc67ec961c5a757b76}\label{class_a_n___vector_a1db9aa81f04de1bc67ec961c5a757b76}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{iterator}]{i1,  }\item[{iterator}]{i2 }\end{DoxyParamCaption})}
+
+
+
+erase a range of elements from the vector 
+
+erase an element between two iterators
+
+
+\begin{DoxyParams}{Parameters}
+{\em i1} & \\
+\hline
+{\em i2} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_n___vector_a8da5faba6484c82cc68e75194f95a1a4}\label{class_a_n___vector_a8da5faba6484c82cc68e75194f95a1a4}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{iterator}]{i,  }\item[{T}]{element }\end{DoxyParamCaption})}
+
+
+
+insert an element at a specific index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+{\em element} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of the vector
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+{\em element} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_n___vector_a095b575728da7f8e449c27c30c1262eb}\label{class_a_n___vector_a095b575728da7f8e449c27c30c1262eb}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{\+::operator}}$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+check if a vector is smaller than another vector 
+
+if the vector is smaller than the other vectora
+
+\begin{DoxyReturn}{Returns}
+true if it is smaller 
+
+false if it is not smaller 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if smaller, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a0b6df4363055ca5a009aa64e273770d7}\label{class_a_n___vector_a0b6df4363055ca5a009aa64e273770d7}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{\+::operator}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&\&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+AN\+\_\+\+Vector$<$\+T$>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a534780201e77e9f2a06868890750088b}\label{class_a_n___vector_a534780201e77e9f2a06868890750088b}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{\+::operator}}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+AN\+\_\+\+Vector$<$\+T$>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a64b926182b22040fcf796c7db334948c}\label{class_a_n___vector_a64b926182b22040fcf796c7db334948c}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{\+::operator}}== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+check if two vectors are equal 
+
+\begin{DoxyReturn}{Returns}
+true if they are equal 
+
+false if they are not equal
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a9a1c5ee55e98f3e46eedbbf9f40f57fc}\label{class_a_n___vector_a9a1c5ee55e98f3e46eedbbf9f40f57fc}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\mbox{\hyperlink{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}{\+::operator}}\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+get the element at a specific index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a0ed6f6f3f5ac7d8ca9be4893c2aa5320}\label{class_a_n___vector_a0ed6f6f3f5ac7d8ca9be4893c2aa5320}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::pop\+\_\+back}
+
+
+
+pop an element from the end of the vector 
+
+remove the last element of the vector
+
+\begin{DoxyReturn}{Returns}
+the last element of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a8bb32ec64e51881e5e6449f000336796}\label{class_a_n___vector_a8bb32ec64e51881e5e6449f000336796}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})}
+
+
+
+push an element to the end of the vector 
+
+add an element to the end of the vector
+
+\begin{DoxyReturn}{Returns}
+size of the vector
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em element} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a9859a51778525f240e30621cdeb9dec8}\label{class_a_n___vector_a9859a51778525f240e30621cdeb9dec8}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!resize@{resize}}
+\index{resize@{resize}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::resize}
+
+
+
+resize the vector 
+
+\begin{DoxyReturn}{Returns}
+int
+
+capacity of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_n___vector_a3cf82f63703f6bcc951cd74e60212f4e}\label{class_a_n___vector_a3cf82f63703f6bcc951cd74e60212f4e}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$\+::\+Size}
+
+
+
+get the size of the vector 
+
+return the size of the vector
+
+\begin{DoxyReturn}{Returns}
+int
+
+size 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}\label{class_a_n___vector_a9fcd7c2825a197185d88a6559f47dd8c}} 
+\index{AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}!operator@{operator}}
+\index{operator@{operator}!AN\_Vector$<$ T $>$@{AN\_Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator}{operator}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+ostream \& operator (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_a_n___vector}{AN\+\_\+\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+print the vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em v} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ostream\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_a_n___vector_8h}{AN\+\_\+\+Vector.\+h}}\item 
+AN\+\_\+\+Vector.\+cpp\end{DoxyCompactItemize}
